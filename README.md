@@ -1,4 +1,4 @@
-# oai5g Report: https://www.overleaf.com/project/675283dc8358766013dd0056
+# oai5g 
 Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Access Network)
 
 
