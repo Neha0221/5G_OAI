@@ -1,9 +1,5 @@
-
-|*** OAI Building & Executable architecture for recent versions was changed. As a result, updated and a recent instruction can be followed from the main gitlab repo [OAI5G](https://gitlab.eurecom.fr/oai/openairinterface5g/wikis/home)! - Just to be safe. Updated 24 Feb 2020  |
-| --- |
-
 # oai5g
-Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Access Network based on USRPx300)
+Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Access Network)
 
 
 *   [OAI Roadmap](#OAI)
@@ -35,18 +31,6 @@ sudo apt-get install linux-image-lowlatency linux-headers-lowlatency
 ```bash
 uname -a
 ``` 
-If you still see the generic kernal, you have to select the kernal manually while rebooting from Advanced Option
-or to set it to be the default accross system rebooting.
-1. to know the exact installed kernal name ID.
-```bash 
-grep menuentry /boot/grub/grub.cfg
-```
-2. Add that name to grub-set-default to set the grub to load the new kernal by default while rebooting
-```bash 
-sudo grub-set-default "Ubuntu, with Linux lowlatency"
-sudo grub-reboot "Ubuntu, with Linux lowlatency"
-sudo update-grub
-``` 
 #### OAI Power Management
 OAI requires to Remove all power management features in the BIOS (sleep states, in particular C-states) and CPU frequency scaling (Intel SpeedStep) so OAI can run with the maximum CPU clock 100% in performance mode and avoid  any scaling, also make sure to disable the p-state driver 
 
@@ -55,18 +39,7 @@ Add GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_pstate=disable" to /etc/default/grub
 nano /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_pstate=disable"
 ```
-Next we update the Governor to performance, Hence the all options are mentioned below.
-
-| GOVERNOR      | Description.  |
-| ------------- | ------------- |
-| Performance   | Run the CPU at the maximum frequency 		 |
-| powersave     | Run the CPU at the minimum frequency  	 |
-| userspace 	| Run the CPU at user specified frequencies 	 |
-| ondemand 	| Scales the frequency dynamically according to current load. Jumps to the highest frequency and then possibly back off as the idle time increases | 
-| conservative  | Scales the frequency dynamically according to current load. Scales the frequency more gradually than ondemand |
-| schedutil	|Scheduler-driven CPU frequency selection|
-
-
+Next we update the Governor to performance
 
 ```bash
 sudo apt-get install cpufrequtils
@@ -91,7 +64,7 @@ git clone -b develop https://gitlab.eurecom.fr/oai/openairinterface5g.git
 cd openairinterface5g
 ```
 
-###### Very important. It sets the correct environment variables. 
+###### It sets the correct environment variables. 
 ```bash
 source oaienv
 ```
