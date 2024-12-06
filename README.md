@@ -27,13 +27,9 @@ Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Acces
 <h3 id="kernal">Kernal and OS Requirements</h3>
 
 First, we need to get a low latency kernal
-- for Ubuntu 14.04
-```bash
-sudo apt-get install linux-image-3.19.0-61-lowlatency linux-headers-3.19.0-61-lowlatency
+- for Ubuntu 24.04
 ```
-- for Ubuntu 16.04
-```
-sudo apt-get install linux-image-4.8.0-36-lowlatency linux-headers-4.8.0-36-lowlatency
+sudo apt-get install linux-image-lowlatency linux-headers-lowlatency
 ```
 - After Reboot You can check the installed kernal by typing
 ```bash
@@ -47,8 +43,8 @@ grep menuentry /boot/grub/grub.cfg
 ```
 2. Add that name to grub-set-default to set the grub to load the new kernal by default while rebooting
 ```bash 
-sudo grub-set-default "Ubuntu, with Linux 4.8.0-36-lowlatency"
-sudo grub-reboot "Ubuntu, with Linux 4.8.0-36-lowlatency"
+sudo grub-set-default "Ubuntu, with Linux lowlatency"
+sudo grub-reboot "Ubuntu, with Linux lowlatency"
 sudo update-grub
 ``` 
 #### OAI Power Management
@@ -86,13 +82,9 @@ sudo cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 <h3 id="S.W.">E-UTRAN S.W. Installation</h3>
 
 Checkout RAN repository (eNB RAN + UE RAN):
-- for Ubuntu 16.04 Get the develop branch (up to date features)
+- for Ubuntu 24.04 Get the develop branch (up to date features)
 ```bash
-git clone -r develop https://gitlab.eurecom.fr/oai/openairinterface5g.git
-```
-- for Ubuntu 14.04 Get the master branch (Stable)
-```bash
-git clone https://gitlab.eurecom.fr/oai/openairinterface5g.git
+git clone -b develop https://gitlab.eurecom.fr/oai/openairinterface5g.git
 ```
 
 ```bash
@@ -191,41 +183,10 @@ sudo -E ./lte_noS1_build_oai/build/lte-softmodem-nos1  -U -C2660000000 -r25 --ue
   <img src="https://github.com/astro7x/oai5g/blob/master/img/UE0.png?raw=true"/>
 </p>
 
-
 <h3 id="REF">OAI Gitlab</h3>
 
 OpenAirInterface is under OpenAirInterface Software Alliance license.
 Refere to the main source code at GitLab
-
-It is distributed under OAI Public License V1.0. 
-The license information is distributed under LICENSE file in the same directory.
-Please see NOTICE.txt for third party software that is included in the sources.
-
-The OpenAirInterface (OAI) software is composed of the following parts: 
-
-openairinterface5g
-- cmake_targets: build utilities to compile (simulation, emulation and real-time platforms), and generated build files
-- common : some common OAI utilities, other tools can be found at openair2/UTILS
-- LICENSE
-- maketags : script to generate emacs tags
-- openair1 : 3GPP LTE Rel-10 PHY layer + PHY RF simulation and a subset of Rel 12 Features.
-- openair2 :3GPP LTE Rel-10 RLC/MAC/PDCP/RRC/X2AP implementation. 
-    - LAYER2/RLC/ with the following subdirectories: UM_v9.3.0, TM_v9.3.0, and AM_v9.3.0. 
-    - LAYER2/PDCP/PDCP_v10.1.0. 
-    - RRC/LITE
-    - PHY_INTERFACE
-    - X2AP
-    - ENB_APP 
-- openair3: 3GPP LTE Rel10 for S1AP, NAS GTPV1-U for both ENB and UE.
-    - GTPV1-U
-    - NAS 
-    - S1AP
-    - SCTP
-    - SECU
-    - UDP
-- targets: top level wrapper for unitary simulation for PHY channels, system-level emulation 
-   - eNB-UE with and without S1
-   - realtime eNB and UE and RRH GW.
 
 #### Refere to https://gitlab.eurecom.fr/oai/openairinterface5g/tree/master for the full source code
 
