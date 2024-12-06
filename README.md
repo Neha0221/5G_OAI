@@ -1,4 +1,5 @@
 # oai5g 
+Report : https://www.overleaf.com/read/hmsydpyhcjzb#a70a09
 Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Access Network)
 
 
