@@ -1,6 +1,11 @@
 # oai5g 
-Report : https://www.overleaf.com/read/hmsydpyhcjzb#a70a09
-Video Link of PPT : [https://drive.google.com/file/d/1BqIHjdNuTGePsX9RhV1SA8k-AXSVgxw5/view](url) 
+# Project Documentation
+
+## Report  
+[Open Report on Overleaf](https://www.overleaf.com/read/hmsydpyhcjzb#a70a09)
+
+## Video Link of PPT  
+[Watch Video Presentation](https://drive.google.com/file/d/1BqIHjdNuTGePsX9RhV1SA8k-AXSVgxw5/view)
 
 Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Access Network)
 
