@@ -4,7 +4,6 @@ Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Acces
 
 *   [OAI Roadmap](#OAI)
 
-	*	[H.W Requirements](#H.W.)
 	*	[Kernal Setup and Intel Driver Configuration](#kernal)
 	*	[E-UTRAN S.W. Installation](#S.W.)
 	*	[Testing Radio Access Network Connection](#RAN)
@@ -13,12 +12,6 @@ Open Air Interface (OAI) Startup: (Installation and Configuration of Radio Acces
 
 
 <h2 id="OAI">OAI Roadmap</h2>
-
-<h3 id="H.W.">H.W Requirements</h3>
-
-- Regarding the Host: Current OpenAirInterface software requires Intel architecture based PCs for the eNB or UE targets. This requirement is due to optimized DSP functions which make heavy use of integer SIMD instructions.
-
-- Regarding the Radio Head: OAI supports a variety of Software Defined Radios including (Exmimo, USRP B200, USRP x300, LimeSDR)
 
 <h3 id="kernal">Kernal and OS Requirements</h3>
 
